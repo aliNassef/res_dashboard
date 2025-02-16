@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:res_dashboard/adaptive_layout.dart';
+import 'package:res_dashboard/core/utils/app_color.dart';
 import 'package:res_dashboard/views/mobile_layout.dart';
 import 'package:res_dashboard/views/tablet_layout.dart';
 import 'package:res_dashboard/widgets/custom_drawer.dart';
 
+import 'core/utils/size_config.dart';
 import 'views/desktop_layout.dart';
 
 void main() {
@@ -20,12 +22,15 @@ class MyApp extends StatelessWidget {
       title: 'Responsive Dashboard',
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xfff7f9fa),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryDark),
+        primaryColor: AppColors.primaryDark,
         useMaterial3: true,
       ),
       home: Scaffold(
-        drawer: MediaQuery.sizeOf(context).width < 800 ? CustomDrawer() : null,
-        appBar: MediaQuery.sizeOf(context).width < 800
+        drawer: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+            ? CustomDrawer()
+            : null,
+        appBar: MediaQuery.sizeOf(context).width < SizeConfig.tablet
             ? _buildAppBar()
             : null,
         backgroundColor: Color(0xfff7f9fa),
@@ -40,16 +45,16 @@ class MyApp extends StatelessWidget {
 
   AppBar _buildAppBar() {
     return AppBar(
-              elevation: 0,
-              backgroundColor: Color(0xfff7f9fa),
-              leading: Builder(builder: (context) {
-                return InkWell(
-                  onTap: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  child: Icon(Icons.menu),
-                );
-              }),
-            );
+      elevation: 0,
+      backgroundColor: Color(0xfff7f9fa),
+      leading: Builder(builder: (context) {
+        return InkWell(
+          onTap: () {
+            Scaffold.of(context).openDrawer();
+          },
+          child: Icon(Icons.menu),
+        );
+      }),
+    );
   }
 }

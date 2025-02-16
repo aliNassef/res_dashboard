@@ -14,12 +14,15 @@ class _IncomeChartState extends State<IncomeChart> {
   int currentChart = -1;
   @override
   Widget build(BuildContext context) {
-    return PieChart(
-      duration: Duration(
-        milliseconds: 300,
+    return AspectRatio(
+      aspectRatio: 1,
+      child: PieChart(
+        duration: Duration(
+          milliseconds: 300,
+        ),
+        curve: Curves.bounceInOut,
+        getChartData(),
       ),
-      curve: Curves.bounceInOut,
-      getChartData(),
     );
   }
 
@@ -39,25 +42,25 @@ class _IncomeChartState extends State<IncomeChart> {
           showTitle: false,
           color: AppColors.secondaryBlue,
           value: 40,
-          radius: currentChart == 1 ? 70 : 50,
+          radius: currentChart == 0 ? 60 : 50,
         ),
         PieChartSectionData(
           color: AppColors.primaryLight2,
           value: 25,
           showTitle: false,
-          radius: currentChart == 2 ? 70 : 50,
+          radius: currentChart == 1 ? 60 : 50,
         ),
         PieChartSectionData(
           showTitle: false,
           color: AppColors.primaryDark,
           value: 20,
-          radius: currentChart == 0 ? 70 : 50,
+          radius: currentChart == 2 ? 60 : 50,
         ),
         PieChartSectionData(
           color: AppColors.lightGrey,
           showTitle: false,
           value: 22,
-          radius: currentChart == 3 ? 70 : 50,
+          radius: currentChart == 3 ? 60 : 50,
         ),
       ],
     );

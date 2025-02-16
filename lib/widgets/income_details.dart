@@ -24,7 +24,7 @@ class IncomeDetails extends StatelessWidget {
     ChartModel(
       title: 'Other',
       percent: 22.0,
-      color: AppColors.lightGrey,
+      color: AppColors.grey2,
     ),
   ];
   @override
