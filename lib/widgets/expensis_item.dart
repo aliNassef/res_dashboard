@@ -32,15 +32,18 @@ class ExpensesItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundColor:
-                    isSelected ? Color(0xff60bef3) : AppColors.backgroundLight,
-                child: SvgPicture.asset(
-                  Assets.imagesBalanceIcon,
-                  colorFilter: ColorFilter.mode(
-                    isSelected ? AppColors.white : AppColors.primaryLight,
-                    BlendMode.srcIn,
+              Flexible(
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: isSelected
+                      ? Color(0xff60bef3)
+                      : AppColors.backgroundLight,
+                  child: SvgPicture.asset(
+                    Assets.imagesBalanceIcon,
+                    colorFilter: ColorFilter.mode(
+                      isSelected ? AppColors.white : AppColors.primaryLight,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),
@@ -52,24 +55,36 @@ class ExpensesItem extends StatelessWidget {
             ],
           ),
           34.hs,
-          Text(
-            'Balance',
-            style: AppStyles.semiBold16(context).copyWith(
-              color: isSelected ? AppColors.white : AppColors.primaryDark,
+          FittedBox(
+            alignment: AlignmentDirectional.centerStart,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              'Balance',
+              style: AppStyles.semiBold16(context).copyWith(
+                color: isSelected ? AppColors.white : AppColors.primaryDark,
+              ),
             ),
           ),
           8.hs,
-          Text(
-            'April 2022',
-            style: AppStyles.regular14(context).copyWith(
-              color: isSelected ? AppColors.backgroundLight : AppColors.grey,
+          FittedBox(
+            alignment: AlignmentDirectional.centerStart,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              'April 2022',
+              style: AppStyles.regular14(context).copyWith(
+                color: isSelected ? AppColors.backgroundLight : AppColors.grey,
+              ),
             ),
           ),
           16.hs,
-          Text(
-            '\$20,129',
-            style: AppStyles.semiBold24(context).copyWith(
-              color: isSelected ? AppColors.white : AppColors.primaryLight,
+          FittedBox(
+            alignment: AlignmentDirectional.centerStart,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              '\$20,129',
+              style: AppStyles.semiBold24(context).copyWith(
+                color: isSelected ? AppColors.white : AppColors.primaryLight,
+              ),
             ),
           ),
         ],

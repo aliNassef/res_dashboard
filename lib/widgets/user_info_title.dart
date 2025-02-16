@@ -40,10 +40,12 @@ class UserInfoTItle extends StatelessWidget {
                   ),
                 ),
                 4.hs,
-                Text(
-                  subTitle,
-                  style: AppStyles.regular12(context).copyWith(
-                    color: AppColors.grey,
+                FittedBox(
+                  child: Text(
+                    subTitle,
+                    style: AppStyles.regular12(context).copyWith(
+                      color: AppColors.grey,
+                    ),
                   ),
                 ),
               ],

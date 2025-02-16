@@ -13,7 +13,7 @@ class CustomElevatedButton extends StatelessWidget {
     required this.backgroundColor,
     required this.textColor,
     this.borderRadius = 12.0,
-    this.padding = const EdgeInsets.symmetric(vertical: 20.0, horizontal: 75),
+    this.padding = const EdgeInsets.symmetric(vertical: 20.0),
   });
 
   @override
