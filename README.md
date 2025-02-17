@@ -1,16 +1,152 @@
-# res_dashboard
+# Responsive Flutter Dashboard
 
-A new Flutter project.
+A responsive admin dashboard built with Flutter, focusing on income tracking and expense management.
 
-## Getting Started
+## 🌟 Key Features
 
-This project is a starting point for a Flutter application.
+- ✨ Fully responsive design that works across all screen sizes
+- 📊 Interactive pie chart for income analysis
+- 💼 Expenses and Quick Invoice section
+- 🎨 Modern UI with Material Design 3
+- 📱 Built-in device preview for development
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗️ Project Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Responsive Layouts
+if (width < 600) => Mobile Layout
+if (width < 1300) => Tablet Layout
+else => Desktop Layout
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Income Analysis
+The project displays detailed income breakdown:
+- Design Services (40%)
+- Design Products (25%)
+- Product Royalties (20%)
+- Other Sources (22%)
+
+## 🛠️ Technologies Used
+
+- Flutter
+- fl_chart for data visualization
+- device_preview for testing
+- Material Design 3
+
+## 📱 Responsive Features
+
+### Desktop
+- Three-column layout
+- Fixed sidebar
+- Full charts and statistics display
+
+### Tablet
+- Two-column layout
+- Fixed sidebar
+- Optimized for medium screens
+
+### Mobile
+- Single column layout
+- Collapsible drawer
+- Top app bar with menu button
+
+## 🎨 Color System
+
+```dart
+AppColors {
+    primaryDark
+    secondaryBlue
+    primaryLight2
+    lightGrey
+    white
+}
+```
+
+## 📦 Core Components
+
+- `AdaptiveLayout`: Manages responsive layouts
+- `CustomDrawer`: Navigation sidebar
+- `IncomeFeature`: Income analysis with charts
+- `ExpensesFeature`: Expense tracking
+- `QuickInvoiceFeature`: Quick invoice creation
+
+## 🚀 Getting Started
+
+1. Install dependencies:
+```bash
+flutter pub get
+```
+
+2. Run the project:
+```bash
+flutter run
+```
+
+## 📊 Charts
+
+The project uses `fl_chart` to display:
+- Interactive pie charts
+- Detailed income analysis
+- Responsive data visualization
+
+## 🔍 Project Features Breakdown
+
+### Income Section
+- Interactive pie chart
+- Percentage breakdown
+- Category-wise analysis
+- Hover effects
+
+### Expenses Section
+- Transaction history
+- Quick invoice generation
+- Expense categorization
+
+### Navigation
+- Responsive drawer
+- Context-aware layout
+- Smooth transitions
+
+## 💻 Code Architecture
+
+```
+lib/
+├── views/
+│   ├── desktop_layout.dart
+│   ├── tablet_layout.dart
+│   └── mobile_layout.dart
+├── widgets/
+│   ├── income_feature/
+│   ├── expenses_feature/
+│   └── custom_drawer/
+└── core/
+    ├── utils/
+    └── extensions/
+```
+
+## 🔜 Suggested Future Enhancements
+
+- [ ] Dark mode implementation
+- [ ] Backend API integration
+- [ ] Additional analytics
+- [ ] Chart performance optimization
+- [ ] Data export functionality
+- [ ] User authentication
+- [ ] Theme customization
+- [ ] Localization support
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🛟 Support
+
+For support, please open an issue in the GitHub repository.
+
+## 🙏 Acknowledgments
+
+- Flutter team for the framework
+- fl_chart library for charts
+- device_preview for testing tools
